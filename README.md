@@ -2,6 +2,10 @@
 
 This repository is a reproduction for this issue over at Cypress side: https://github.com/cypress-io/cypress/issues/25174
 
+## GitHub actions
+
+The Cypress test `cypress/e2e/spec.cy.js` is running also in GitHub actions and the test failures can be seen there: https://github.com/valscion/cypress-cookie-issue-reproduction/actions
+
 ## Setup steps
 
 * Install rbenv: https://github.com/rbenv/rbenv#installation

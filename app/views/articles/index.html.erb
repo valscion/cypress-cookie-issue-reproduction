@@ -1,0 +1,23 @@
+<h1>Articles#index</h1>
+<p>Find me in app/views/articles/index.html.erb</p>
+
+<p>Flash contents: <%= flash[:message_via_cookie] %></p>
+<button id="do-xhr-request">Trigger XHR request</button>
+<button id="do-fetch-request">Trigger fetch request</button>
+
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+document.getElementById("do-xhr-request").onclick = () => {
+  $.ajax({
+    url: "/?set_the_flash=1"
+  }).done(() => {
+    location.reload(true)
+  })
+}
+document.getElementById("do-fetch-request").onclick = () => {
+  fetch("/?set_the_flash=1").then(() => {
+    location.reload(true)
+  })
+}
+</script>

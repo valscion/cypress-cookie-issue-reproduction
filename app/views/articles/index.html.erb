@@ -3,7 +3,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
-<script type="text/javascript">
+<script type="module">
 document.getElementById("do-xhr-request").onclick = () => {
   $.ajax({
     url: "/?set_the_flash=1"
@@ -26,7 +26,7 @@ document.getElementById("do-fetch-request").onclick = () => {
   id="client-cookies-json"
   style="max-width: 100vw; width: 500px; white-space: pre-wrap; word-break: break-all"
 ></pre>
-<script type="text/javascript">
+<script type="module">
 const parsedCookies = document.cookie.split(';').map(singleCookie => {
   const [key, value] = singleCookie.split('=');
   return [key, decodeURIComponent(value)];
@@ -34,6 +34,23 @@ const parsedCookies = document.cookie.split(';').map(singleCookie => {
 
 document.getElementById("client-cookies-json").innerText =
   JSON.stringify(parsedCookies, null, 2)
+</script>
+
+<h2>Current cookies as JSON from document.cookie with a small timeout</h2>
+<pre
+  id="client-cookies-json-timeout"
+  style="max-width: 100vw; width: 500px; white-space: pre-wrap; word-break: break-all"
+></pre>
+<script type="module">
+setTimeout(() => {
+  const parsedCookies = document.cookie.split(';').map(singleCookie => {
+    const [key, value] = singleCookie.split('=');
+    return [key, decodeURIComponent(value)];
+  });
+
+  document.getElementById("client-cookies-json-timeout").innerText =
+    JSON.stringify(parsedCookies, null, 2)
+}, 500);
 </script>
 
 <h2>Cookies set in last request (server side)</h2>

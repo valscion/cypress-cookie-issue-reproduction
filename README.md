@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository is a reproduction for this issue over at Cypress side: https://github.com/cypress-io/cypress/issues/25174
 
-Things you may want to cover:
+## Setup steps
 
-* Ruby version
+* Install rbenv: https://github.com/rbenv/rbenv#installation
+* Checkout this repository and `cd` to it
+* Install same version of ruby as this repo uses: `rbenv install`
+* Install ruby dependencies: `bundle install`
+* Install npm dependencies: `npm install`
 
-* System dependencies
+## To run Cypress
 
-* Configuration
+Open the test environment rails server in own terminal:
 
-* Database creation
+```
+npm run cypress:rails
+```
 
-* Database initialization
+Run the Cypress app in another terminal:
 
-* How to run the test suite
+```
+npm run cypress:open
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+You can also access the test Rails server in a different browser using http://example.localtest.me:3333
 
-* Deployment instructions
 
-* ...
+## To run regular development server
+
+The development server automatically reloads code changes while the test server doesn't.
+
+```
+bin/rails server
+```
+
+Then access the application with http://example.localtest.me:3000 to test cookies with domains.

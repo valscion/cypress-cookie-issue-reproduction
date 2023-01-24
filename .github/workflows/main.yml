@@ -27,19 +27,19 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: failure()
         with:
-          name: cypress-screenshots
+          name: chrome-cypress-screenshots
           path: cypress/screenshots
       # Test run video was always captured, so this action uses "always()" condition
       - uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: cypress-videos
+          name: chrome-cypress-videos
           path: cypress/videos
       # A Rails server log is always generated so we use "always()"
       - uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: rails-test-log
+          name: chrome-rails-test-log
           path: log/test.log
   cypress-firefox:
     runs-on: ubuntu-22.04
@@ -66,17 +66,17 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: failure()
         with:
-          name: cypress-screenshots
+          name: firefox-cypress-screenshots
           path: cypress/screenshots
       # Test run video was always captured, so this action uses "always()" condition
       - uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: cypress-videos
+          name: firefox-cypress-videos
           path: cypress/videos
       # A Rails server log is always generated so we use "always()"
       - uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: rails-test-log
+          name: firefox-rails-test-log
           path: log/test.log

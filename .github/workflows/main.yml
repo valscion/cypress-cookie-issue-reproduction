@@ -46,6 +46,10 @@ jobs:
     container:
       image: cypress/browsers:node12.16.1-chrome80-ff73
       options: --user 1001
+    env:
+      # ruby/setup-ruby needs the ImageOS environment variable to be present to work properly
+      # See https://github.com/ruby/setup-ruby/issues/230
+      ImageOS: ubuntu22
     steps:
       - name: Checkout
         uses: actions/checkout@v3

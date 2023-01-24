@@ -6,11 +6,12 @@ This repository is a reproduction for this issue over at Cypress side: https://g
 
 The Cypress test `cypress/e2e/spec.cy.js` is running also in GitHub actions and the test failures can be seen there: https://github.com/valscion/cypress-cookie-issue-reproduction/actions?query=branch%3Amain
 
-## Regression proof
+## Regression proof and variations
 
 There exists a pull request showing how the test passes with older version of Cypress:
 
-* Cypress v11.2.0: https://github.com/valscion/cypress-cookie-issue-reproduction/pull/1
+* Cypress v11.2.0 works: https://github.com/valscion/cypress-cookie-issue-reproduction/pull/1
+* `httpOnly` cookies show the same issue: https://github.com/valscion/cypress-cookie-issue-reproduction/pull/3
 
 ## Setup steps
 
